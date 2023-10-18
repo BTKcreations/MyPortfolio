@@ -312,7 +312,7 @@ span {
 
 .education .education-row {
    display: flex;
-   flex-wrap: nowrap;
+   flex-wrap: wrap;
    gap: 5rem;
 }
 .education-row .education-column {
@@ -388,7 +388,7 @@ span {
 
 
 .skills{
-   min-height: 100vh;
+   min-height: auto;
    padding-bottom: 7rem;
    background: var(--second-bg-color);
 }
@@ -493,7 +493,7 @@ span {
 
 
 .contact {
-   min-height: 100vh;
+   min-height: auto;
    padding-bottom: 7rem;
 }
 
