@@ -390,7 +390,7 @@ span {
 .skills .skills-row {
    display: flex;
    flex-wrap: wrap;
-   gap: 5rem;
+   gap: .5rem;
 }
 .skills-row .skills-column {
    flex: 1 1 40rem;
