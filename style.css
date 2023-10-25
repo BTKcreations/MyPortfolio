@@ -559,7 +559,7 @@ span {
 
 
 .contact {
-   min-height: 90vh;
+   min-height: auto;
    padding-bottom: 7rem;
 }
 
