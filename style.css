@@ -437,7 +437,7 @@ span {
 
 
 .skills{
-   min-height: 100vh;
+   /* min-height: 100vh; */
    padding-bottom: 7rem;
    background: var(--second-bg-color);
 }
@@ -451,7 +451,7 @@ span {
 
 .skills .skills-row {
    display: flex;
-   flex-wrap: wrap;
+   flex-wrap:wrap;
    gap: 2.5rem;
 }
 .skills-row .skills-column {
@@ -559,7 +559,7 @@ span {
 
 
 .contact {
-   min-height: auto;
+   /* min-height: auto; */
    padding-bottom: 7rem;
 }
 
