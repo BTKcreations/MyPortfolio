@@ -223,46 +223,68 @@
     <section class="contact" id="contact">
         <h2 class="heading">Contact <span>Me!</span><span class="animate scroll" style="--i:1;"></span></h2>
 
-        <form action="#">
-            <div class="input-box">
-                <div class="input-field">
-                    <input type="text" placeholder="Full Name" required>
-                    <span class="focus"></span>
-                </div>
-                <div class="input-field">
-                    <input type="text" placeholder="Email Address" required>
-                    <span class="focus"></span>
-                </div>
-
-                <span class="animate scroll" style="--i:3;"></span>
-            </div>
-
-            <div class="input-box">
-                <div class="input-field">
-                    <input type="number" placeholder="Mobile Number" required>
-                    <span class="focus"></span>
-                </div>
-                <div class="input-field">
-                    <input type="text" placeholder="Email Subject" required>
-                    <span class="focus"></span>
-                </div>
-
-                <span class="animate scroll" style="--i:5;"></span>
-            </div>
-
-            <div class="textarea-field">
-                <textarea name="" id="" cols="30" rows="10" placeholder="Your Message" required></textarea>
+        <form id="myForm" action="#">
+        <div class="input-box">
+            <div class="input-field">
+                <input type="text" id="fullName" placeholder="Full Name" required>
                 <span class="focus"></span>
-
-                <span class="animate scroll" style="--i:7;"></span>
             </div>
-
-            <div class="btn-box btns">
-                <button type="submit" class="btn">Submit</button>
-
-                <span class="animate scroll" style="--i:9;"></span>
+            <div class="input-field">
+                <input type="text" id="email" placeholder="Email Address" required>
+                <span class="focus"></span>
             </div>
-        </form>
+            <span class="animate scroll" style="--i:3;"></span>
+        </div>
+        <div class="input-box">
+            <div class="input-field">
+                <input type="number" id="mobileNumber" placeholder="Mobile Number" required>
+                <span class="focus"></span>
+            </div>
+            <div class="input-field">
+                <input type="text" id="emailSubject" placeholder="Email Subject" required>
+                <span class="focus"></span>
+            </div>
+            <span class="animate scroll" style="--i:5;"></span>
+        </div>
+        <div class="textarea-field">
+            <textarea id="message" cols="30" rows="10" placeholder="Your Message" required></textarea>
+            <span class="focus"></span>
+            <span class="animate scroll" style="--i:7;"></span>
+        </div>
+        <div class="btn-box btns">
+            <button type="submit" class="btn">Submit</button>
+            <span class="animate scroll" style="--i:9;"></span>
+        </div>
+    </form>
+
+    <script>
+        $(document).ready(function() {
+            $('#myForm').on('submit', function(e) {
+                e.preventDefault();
+
+                const formData = {
+                    fullName: $('#fullName').val(),
+                    email: $('#email').val(),
+                    mobileNumber: $('#mobileNumber').val(),
+                    emailSubject: $('#emailSubject').val(),
+                    message: $('#message').val()
+                };
+
+                $.ajax({
+                    type: 'POST',
+                    url: 'http://localhost:3001/submit-form',
+                    data: JSON.stringify(formData),
+                    contentType: 'application/json',
+                    success: function(response) {
+                        alert(response);
+                    },
+                    error: function(err) {
+                        alert('An error occurred: ' + err.responseText);
+                    }
+                });
+            });
+        });
+    </script>
     </section>
 
     <footer class="footer">
